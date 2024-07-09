@@ -1,0 +1,47 @@
+openapi: '3.0.3'
+info:
+    version: '1.0'
+    title: My API
+    description: This is API for memes
+servers:
+  - url: http://localhost:3000
+paths:
+   /memes:
+    get:
+      summary: "Get all memes"
+      description: >- 
+            This method is responsible for retrieving all memes
+              * If the memes is not found, an error should be returned.
+              * If the memes is deleted, an error should be returned.
+              * If the memes is found, the memes should be returned.
+      tags:
+        - memes
+        - Get
+      responses:
+        200:
+          description: Successful request
+        500:
+          description: "Internal Server Error"
+    post:
+      summary: "Add a new meme"
+      description: >- 
+            This method is responsible for adding a new meme
+              * If the meme is not added, an error should be returned.
+              * If the meme is added, the meme should be returned.
+      tags:
+        - memes
+        - Post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Meme'
+      responses:
+
+
+
+
+
+
+
